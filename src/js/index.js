@@ -1,0 +1,9 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../plugins/slick/slick.css';
+import '../fonts/fonts.css';
+import '../fonts/icons.css';
+import '../styles/style.scss';
+import 'babel-polyfill';
+import 'isomorphic-fetch';
+import '../plugins/slick/slick.js';
+import '../js/script.js';
