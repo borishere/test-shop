@@ -49,7 +49,7 @@
         });
     };
 
-    $(document).ready(function() {
+    $(function() {
         async function getShopItems() {
             let itemsUrl = 'https://borishere.github.io/shop/products.json';
             let response = await fetch(itemsUrl);
