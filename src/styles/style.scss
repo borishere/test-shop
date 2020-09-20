@@ -3,6 +3,9 @@
 body {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
+    &.info-modal-opened {
+        overflow: hidden;
+    }
 }
 .shop-items {
     margin-bottom: 150px;

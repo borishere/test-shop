@@ -97,6 +97,8 @@
             'speed': 12
         });
 
+        let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
         let updateModal = ($modal, curItem) => {
             let imagesHtml = '';
 
@@ -284,6 +286,7 @@
                     $modal.find('.info-modal__close-btn').addBack().on('click', function() {
                         $modal.fadeOut(400, function() {
                             $modal.remove();
+                        $('body').removeClass('info-modal-opened').css('padding-right', '');
                         });
                     });
 
@@ -357,7 +360,11 @@
                             });
                     });
 
-                    $('body').append($modal);
+                    $('body').append($modal).addClass('info-modal-opened');
+
+                    if (!isMobile) {
+                        $('body').css('padding-right', '17px');
+                    }
 
                     setTimeout(() => {
                         $modal.addClass('animated');
