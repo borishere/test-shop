@@ -16,10 +16,11 @@
             }
 
             let moveHandler = function(e) {
-                let offset = e.clientX - clickPosition;
+                let clientX = e.clientX || e.touches[0].clientX;
+                let offset = clientX - clickPosition;
 
                 if (Math.abs(offset) > options.speed) {
-                    clickPosition = e.clientX;
+                    clickPosition = clientX;
                     currentIndex += offset / Math.abs(offset);
 
                     if (currentIndex >= options.count) currentIndex = 0;
@@ -42,7 +43,7 @@
                 $this
                     .append($('<img>').attr('src', options.source + currentIndex + options.ext))
                     .find('img')
-                    .on('mousemove', moveHandler);
+                    .on('mousemove touchmove', moveHandler);
 
                 image = $this.find('img');
             }
